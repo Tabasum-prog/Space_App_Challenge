@@ -1,0 +1,20 @@
+bands_um:
+- 1.25
+- 2.2
+- 3.3
+- 4.27
+center:
+  dec_deg: 60
+  ra_deg: 150
+delta_lambda_um: 0.02
+expected_objects: []
+id: F_OTHER2
+name: Other Field 2
+notes: ''
+pair_status: ok
+passes_available:
+- 2025-pass1
+- 2025-pass2
+- 2025-pass3
+size_deg: 0.2
+story: ''

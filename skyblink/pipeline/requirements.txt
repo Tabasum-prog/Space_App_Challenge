@@ -1,0 +1,11 @@
+numpy
+scipy
+astropy
+reproject
+photutils
+pillow
+pydantic
+pytest
+ruff
+astroquery
+pyvo

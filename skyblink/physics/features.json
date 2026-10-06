@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Water",
+    "wavelength_um": 1.4,
+    "verify_against_reference": true
+  },
+  {
+    "name": "Water",
+    "wavelength_um": 1.9,
+    "verify_against_reference": true
+  },
+  {
+    "name": "Water",
+    "wavelength_um": 2.7,
+    "verify_against_reference": true
+  },
+  {
+    "name": "Water ice",
+    "wavelength_um": 3.0,
+    "verify_against_reference": true
+  },
+  {
+    "name": "Methane",
+    "wavelength_um": 3.3,
+    "verify_against_reference": true
+  },
+  {
+    "name": "Carbon dioxide",
+    "wavelength_um": 4.27,
+    "verify_against_reference": true
+  },
+  {
+    "name": "Carbon monoxide",
+    "wavelength_um": 4.67,
+    "verify_against_reference": true
+  }
+]

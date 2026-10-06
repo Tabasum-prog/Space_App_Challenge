@@ -1,0 +1,9 @@
+bands:
+  - um: 1.25
+    name: "Near-IR / Starlight"
+  - um: 2.20
+    name: "Warm dust"
+  - um: 3.30
+    name: "Methane"
+  - um: 4.27
+    name: "Carbon dioxide"

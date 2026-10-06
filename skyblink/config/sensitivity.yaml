@@ -1,0 +1,8 @@
+# unverified: true
+# TODO: replace with official SPHEREx documentation
+# 5-sigma depth in AB magnitudes
+depth_ab:
+  "1.25": 19.5
+  "2.20": 19.0
+  "3.30": 18.5
+  "4.27": 18.0

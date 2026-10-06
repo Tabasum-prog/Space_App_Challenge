@@ -1,0 +1,12 @@
+[
+  {
+    "name": "CO2 ice",
+    "wavelength_um": 4.27,
+    "description": "Strong absorption/emission feature for comets."
+  },
+  {
+    "name": "H2O ice",
+    "wavelength_um": 3.0,
+    "description": "Water ice feature."
+  }
+]

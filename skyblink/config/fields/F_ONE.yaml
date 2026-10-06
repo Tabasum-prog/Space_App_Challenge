@@ -1,0 +1,18 @@
+bands_um:
+- 1.25
+- 2.2
+- 3.3
+- 4.27
+center:
+  dec_deg: 10
+  ra_deg: 90
+delta_lambda_um: 0.02
+expected_objects: []
+id: F_ONE
+name: One Pass Field
+notes: ''
+pair_status: not_enough_epochs
+passes_available:
+- 2025-pass1
+size_deg: 0.2
+story: ''

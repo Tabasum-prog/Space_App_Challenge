@@ -1,0 +1,20 @@
+bands_um:
+- 1.25
+- 2.2
+- 3.3
+- 4.27
+center:
+  dec_deg: 80
+  ra_deg: 70
+delta_lambda_um: 0.02
+expected_objects: []
+id: F_EMPTY
+name: Empty Field
+notes: ''
+pair_status: ok
+passes_available:
+- 2025-pass1
+- 2025-pass2
+- 2025-pass3
+size_deg: 0.2
+story: ''

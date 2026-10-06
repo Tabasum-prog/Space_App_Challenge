@@ -1,0 +1,21 @@
+{
+  "spectroscopy": {
+    "co_k_N_m": 1857,
+    "co_12_16_wavenumber_cm_1": 2144,
+    "co_12_16_wavelength_um": 4.664,
+    "co_13_16_wavelength_um": 4.770
+  },
+  "nuclear": {
+    "deuterium_burning_mjup": 13,
+    "lithium_burning_mjup": 65,
+    "hydrogen_burning_mjup": 80
+  },
+  "wiens_law": {
+    "temp_k": 40,
+    "peak_wavelength_um": 72.45
+  },
+  "planet_x": {
+    "dimming_30_to_500_au": 77160.49,
+    "parallax_shift_500_au_arcsec": 825.06
+  }
+}

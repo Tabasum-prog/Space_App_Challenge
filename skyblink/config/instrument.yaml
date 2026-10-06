@@ -1,0 +1,6 @@
+# unverified: true
+# TODO: replace with official SPHEREx documentation
+pixel_scale_arcsec: 6.2 # placeholder
+psf_fwhm_arcsec: 6.2 # placeholder
+read_noise_e: 15.0 # placeholder
+dark_current_e_s: 0.1 # placeholder
