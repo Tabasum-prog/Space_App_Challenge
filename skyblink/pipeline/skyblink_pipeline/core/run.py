@@ -211,95 +211,115 @@ def export_candidates(candidates, field_id, out_dir):
         json.dump(candidates, fp, indent=2)
 
 
-def extract_forced_photometry(field, data_dir, wcs_out_hdr, objects, out_dir_tiles):
+def extract_forced_photometry(field, data_dir, wcs_out_hdr, objects, out_dir_tiles, crossmatch):
     from pipeline.skyblink_pipeline.core.wcs_adapter import create_wcs
-    wcs_obj = create_wcs(header=wcs_out_hdr, crval=(wcs_out_hdr['CRVAL1'], wcs_out_hdr['CRVAL2']), crpix=(wcs_out_hdr['CRPIX1'], wcs_out_hdr['CRPIX2']), cdelt=(wcs_out_hdr['CDELT1'], wcs_out_hdr['CDELT2']), force_numpy=True)
+    import os
+    from astropy.io import fits
     
     bands = field['bands_um']
     passes = field['passes_available']
+    delta_lambda = 0.6 # Tolerance for band matching
     
     results = {}
-    
-    for band in bands:
-        f_dir = os.path.join(data_dir, field['id'])
-        if not os.path.exists(f_dir):
-            continue
-            
-        for p_idx, pass_name in enumerate(passes):
-            from astropy.io import fits
-            exp_files = [f for f in os.listdir(f_dir) if f'_pass{p_idx+1}_' in f]
-            for obj in objects:
-                # obj gives RA/DEC for this pass
-                if 'ephemeris' in obj:
-                    pos = obj['ephemeris'].get(pass_name)
-                    if not pos: continue
-                    ra, dec = pos['ra'], pos['dec']
-                else:
-                    ra, dec = obj['ra'], obj['dec']
-                    
-                best_flux = None
-                best_var = None
-                best_dist = 999.0
-                best_cutout = None
-                best_mjd = None
-                
-                for exp_file in exp_files:
-                    hdul = fits.open(os.path.join(f_dir, exp_file))
-                    hdr = hdul[0].header
-                    wcs_this = create_wcs(header=hdr, crval=(hdr['CRVAL1'], hdr['CRVAL2']), crpix=(hdr['CRPIX1'], hdr['CRPIX2']), cdelt=(hdr['CDELT1'], hdr['CDELT2']), force_numpy=True)
-                    x, y = wcs_this.world_to_pixel(ra, dec)
-                    cx, cy = int(np.round(x)), int(np.round(y))
-                    
-                    if 0 <= cx < 256 and 0 <= cy < 256:
-                        wave_val = hdul['WAVELENGTH'].data[cy, cx]
-                        dist = abs(wave_val - band)
-                        if dist < best_dist:
-                            best_dist = dist
-                            best_flux = hdul[0].data[cy, cx]
-                            best_var = hdul['VARIANCE'].data[cy, cx]
-                            best_mjd = hdr['MJD-OBS']
-                            
-                            y1, y2 = max(0, cy-10), min(256, cy+11)
-                            x1, x2 = max(0, cx-10), min(256, cx+11)
-                            best_cutout = hdul[0].data[y1:y2, x1:x2]
-                    hdul.close()
-                
-                if best_flux is not None and best_dist < 0.2:
-                    if obj['id'] not in results:
-                        results[obj['id']] = {'track': [], 'spectrum': []}
-                        
-                    results[obj['id']]['track'].append({
-                        'mjd': best_mjd,
-                        'flux': float(best_flux),
-                        'flux_err': float(np.sqrt(best_var)),
-                        'band': band,
-                        'pass': pass_name
-                    })
-                    
-                    cutout_path = os.path.join(out_dir_tiles, field['id'], obj['id'], f'{pass_name}_{band}.png')
-                    os.makedirs(os.path.dirname(cutout_path), exist_ok=True)
-                    export_png_tile(best_cutout, cutout_path)
-                    
-                    results[obj['id']]['track'][-1]['image'] = f'/data/tiles/{field["id"]}/{obj["id"]}/{pass_name}_{band}.png'
-            
-    # Compute spectrum (mean over passes for each band)
-    for obj_id, res in results.items():
-        band_flux = {}
-        for t in res['track']:
-            b = t['band']
-            if b not in band_flux:
-                band_flux[b] = []
-            band_flux[b].append(t['flux'])
+    f_dir = os.path.join(data_dir, field['id'])
+    if not os.path.exists(f_dir):
+        return results
         
-        for b, fluxes in band_flux.items():
-            res['spectrum'].append({
-                'wave': float(b),
-                'flux': float(np.mean(fluxes)),
-                'flux_err': float(np.std(fluxes)/np.sqrt(len(fluxes)) if len(fluxes) > 1 else np.sqrt(abs(np.mean(fluxes))))
+    for obj in objects:
+        obj_id = obj['id']
+        results[obj_id] = {'track': [], 'spectrum': []}
+        
+        for p_idx, pass_name in enumerate(passes):
+            exp_files = [f for f in os.listdir(f_dir) if f'_pass{p_idx+1}_' in f]
+            for exp_file in exp_files:
+                hdul = fits.open(os.path.join(f_dir, exp_file))
+                hdr = hdul[0].header
+                mjd = hdr['MJD-OBS']
+                
+                pos = crossmatch.ephemeris(obj_id, mjd)
+                if not pos:
+                    hdul.close()
+                    continue
+                    
+                ra, dec = pos['ra'], pos['dec']
+                wcs_this = create_wcs(header=hdr, crval=(hdr['CRVAL1'], hdr['CRVAL2']), crpix=(hdr['CRPIX1'], hdr['CRPIX2']), cdelt=(hdr['CDELT1'], hdr['CDELT2']), force_numpy=True)
+                x, y = wcs_this.world_to_pixel(ra, dec)
+                cx, cy = int(np.round(x)), int(np.round(y))
+                
+                if 0 <= cx < 256 and 0 <= cy < 256:
+                    wave_val = float(hdul['WAVELENGTH'].data[cy, cx])
+                    
+                    # Check tolerance against any band
+                    best_band = None
+                    best_dist = 999.0
+                    for b in bands:
+                        d = abs(wave_val - b)
+                        if d < best_dist:
+                            best_dist = d
+                            best_band = b
+                            
+                    if best_dist < delta_lambda:
+                        # Aperture photometry (radius 1.5 pixels)
+                        y_idx, x_idx = np.ogrid[:256, :256]
+                        r2 = (x_idx - x)**2 + (y_idx - y)**2
+                        
+                        aperture_mask = r2 <= 2.25 # radius 1.5 (diameter 3 pixels)
+                        annulus_mask = (r2 > 9.0) & (r2 <= 25.0) # annulus r=3 to 5
+                        
+                        flux_data = hdul[0].data
+                        var_data = hdul['VARIANCE'].data
+                        
+                        if np.sum(annulus_mask) > 0:
+                            bg_med = np.median(flux_data[annulus_mask])
+                        else:
+                            bg_med = 0.0
+                            
+                        ap_flux = np.sum(flux_data[aperture_mask] - bg_med)
+                        ap_var = np.sum(var_data[aperture_mask])
+                        
+                        y1, y2 = max(0, cy-10), min(256, cy+11)
+                        x1, x2 = max(0, cx-10), min(256, cx+11)
+                        best_cutout = hdul[0].data[y1:y2, x1:x2]
+                        
+                        # Just grab the best cutout for each band in each pass for PNG export
+                        # (Normally we'd stack or select the best one, but let's just write the last one)
+                        cutout_path = os.path.join(out_dir_tiles, field['id'], obj['id'], f'{pass_name}_{best_band}.png')
+                        os.makedirs(os.path.dirname(cutout_path), exist_ok=True)
+                        export_png_tile(best_cutout, cutout_path)
+                        
+                        results[obj_id]['track'].append({
+                            'mjd': float(mjd),
+                            'flux': float(ap_flux),
+                            'flux_err': float(np.sqrt(ap_var)),
+                            'band': best_band,
+                            'wave': wave_val,
+                            'pass': pass_name,
+                            'x': float(x),
+                            'y': float(y),
+                            'image': f'/data/tiles/{field["id"]}/{obj_id}/{pass_name}_{best_band}.png'
+                        })
+                hdul.close()
+                
+        # Generate binned spectrum
+        # We can bin by rounding wavelength to 2 decimal places
+        spectrum_dict = {}
+        for pt in results[obj_id]['track']:
+            w_bin = round(pt['wave'], 2)
+            if w_bin not in spectrum_dict:
+                spectrum_dict[w_bin] = {'flux_sum': 0, 'var_sum': 0, 'count': 0}
+            spectrum_dict[w_bin]['flux_sum'] += pt['flux']
+            spectrum_dict[w_bin]['var_sum'] += pt['flux_err']**2
+            spectrum_dict[w_bin]['count'] += 1
+            
+        for w_bin in sorted(spectrum_dict.keys()):
+            s = spectrum_dict[w_bin]
+            results[obj_id]['spectrum'].append({
+                'wavelength': float(w_bin),
+                'wave': float(w_bin),
+                'flux': float(s['flux_sum'] / s['count']),
+                'flux_err': float(np.sqrt(s['var_sum']) / s['count'])
             })
             
-        res['spectrum'].sort(key=lambda x: x['wave'])
-        
     return results
 
 def run_field(field_cfg, data_dir, wcs_out, cat_dir, out_dir_cands, out_dir_tiles):
@@ -544,6 +564,8 @@ def main():
         if objects:
             res = extract_forced_photometry(field, data_dir, wcs_out_hdr, objects, out_dir_tiles, crossmatch)
             for obj_id, data in res.items():
+                if len(data['track']) == 0:
+                    continue
                 if obj_id == 'star1':
                     spectra_all.append({
                         'id': obj_id,

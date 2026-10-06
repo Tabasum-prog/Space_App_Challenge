@@ -33,9 +33,13 @@ def make_fits(filename, flux, variance, flags, header_dict, wavelength_map):
 def generate_exposure(field, pass_idx, exp_idx, out_dir):
     shape = (256, 256)
     
-    base_wave = -1.0 + (exp_idx * 0.125) 
+    # 1.1 to 4.9 covers 1.25 to 4.8.
+    # 40 * 0.095 = 3.8. 1.1 + 3.8 = 4.9.
+    # adding pass_idx * 0.02 gives distinct wavelengths per pass.
+    base_wave_center = 1.1 + (exp_idx * 0.095) + (pass_idx * 0.02)
     x = np.arange(shape[1])
-    wave_1d = base_wave + x * (4.0 / 256.0) 
+    # wave at x=128 is base_wave_center
+    wave_1d = base_wave_center + (x - 128) * (1.0 / 256.0) 
     wavelength_map = np.tile(wave_1d, (shape[0], 1))
     
     zodi = np.linspace(10, 20, shape[1])
@@ -72,8 +76,8 @@ def generate_exposure(field, pass_idx, exp_idx, out_dir):
     truth_list = []
     
     if field['id'] == 'F_MOVER':
-        # Parallax-like mover: shifts in RA in pass 2
-        shift_pix = 10 if pass_idx == 1 else 0
+        # Linear mover: shifts 10 pixels per pass in RA
+        shift_pix = pass_idx * 10
         cy_ast = int(np.round(128 + dither_y))
         cx_ast = int(np.round(128 + dither_x + shift_pix))
         true_flux_ast = 200.0
