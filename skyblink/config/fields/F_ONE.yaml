@@ -6,7 +6,7 @@ bands_um:
 center:
   dec_deg: 10
   ra_deg: 90
-delta_lambda_um: 0.02
+delta_lambda_um: 0.2
 expected_objects: []
 id: F_ONE
 name: One Pass Field

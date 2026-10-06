@@ -5,10 +5,11 @@ import { Play, Pause, Maximize } from 'lucide-react';
 
 interface InteractiveCanvasProps {
     fieldId: string;
+    candidateId?: string | null;
     mode: 'blink' | 'swipe' | 'difference';
 }
 
-export default function InteractiveCanvas({ fieldId, mode }: InteractiveCanvasProps) {
+export default function InteractiveCanvas({ fieldId, candidateId, mode }: InteractiveCanvasProps) {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const [zoom, setZoom] = useState(1);
     const [offset, setOffset] = useState({ x: 0, y: 0 });
@@ -29,17 +30,24 @@ export default function InteractiveCanvas({ fieldId, mode }: InteractiveCanvasPr
     const [imgDiff, setImgDiff] = useState<HTMLImageElement | null>(null);
     
     useEffect(() => {
+        if (!candidateId) {
+            setImgA(null);
+            setImgB(null);
+            setImgDiff(null);
+            return;
+        }
+
         const loadImg = (src: string) => {
             const img = new Image();
             img.src = src;
             return img;
         };
         
-        // Load mock PNGs generated for viewing
-        setImgA(loadImg(`/data/${fieldId}/pass1.png`));
-        setImgB(loadImg(`/data/${fieldId}/pass2.png`));
-        setImgDiff(loadImg(`/data/${fieldId}/diff.png`));
-    }, [fieldId]);
+        // Load PNGs generated for viewing
+        setImgA(loadImg(`/data/tiles/${fieldId}/${candidateId}/epoch_a.png`));
+        setImgB(loadImg(`/data/tiles/${fieldId}/${candidateId}/epoch_b.png`));
+        setImgDiff(loadImg(`/data/tiles/${fieldId}/${candidateId}/diff.png`));
+    }, [fieldId, candidateId]);
     
     useEffect(() => {
         if (!isPlaying) return;

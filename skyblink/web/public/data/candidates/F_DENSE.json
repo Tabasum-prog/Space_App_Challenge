@@ -1,20 +1,59 @@
 [
   {
+    "id": "F_DENSE_3.3_0",
+    "field_id": "F_DENSE",
+    "ra_deg": 50.227333333333334,
+    "dec_deg": 60.00688888888889,
+    "band_um": 3.3,
+    "epochs": [
+      "2025-pass1",
+      "2025-pass2"
+    ],
+    "snr": 12.921456919223225,
+    "p_local": 1.7031493746784842e-38,
+    "p_trials_adjusted": 3.4110297198421864e-35,
+    "kind": "pair",
+    "dipole_separation_arcsec": 720.7443955748264,
+    "sharpness": 0.5834379476898859,
+    "chi2_psf": 1.0,
+    "persistent_in_other_pass": false,
+    "type_label": "unidentified",
+    "status": "candidate",
+    "tiles": {
+      "epoch_a": "/data/tiles/F_DENSE/F_DENSE_3.3_0/epoch_a.png",
+      "epoch_b": "/data/tiles/F_DENSE/F_DENSE_3.3_0/epoch_b.png",
+      "diff": "/data/tiles/F_DENSE/F_DENSE_3.3_0/diff.png",
+      "snr": "/data/tiles/F_DENSE/F_DENSE_3.3_0/snr.png"
+    },
+    "notes": "",
+    "crossmatch": {
+      "catalog": null,
+      "id": null,
+      "sep_arcsec": null
+    },
+    "provenance": {
+      "produced_by": "skyblink_pipeline",
+      "git_sha": "unknown",
+      "generated_at": "2026-10-06T16:08:46.388174+00:00",
+      "simulated": true
+    }
+  },
+  {
     "id": "F_DENSE_4.27_0",
     "field_id": "F_DENSE",
-    "ra_deg": 49.72788888888889,
-    "dec_deg": 60.12916666666667,
+    "ra_deg": 49.800222222222224,
+    "dec_deg": 60.02583333333333,
     "band_um": 4.27,
     "epochs": [
       "2025-pass1",
       "2025-pass2"
     ],
-    "snr": 130.98167921121967,
-    "p_local": 0.0,
-    "p_trials_adjusted": 0.0,
+    "snr": 7.126592143476874,
+    "p_local": 5.144218631889926e-13,
+    "p_trials_adjusted": 9.640837296009709e-10,
     "kind": "pair",
-    "dipole_separation_arcsec": 203.7139196656371,
-    "sharpness": 0.022419209466986858,
+    "dipole_separation_arcsec": 725.4225962794791,
+    "sharpness": 0.6016117159780645,
     "chi2_psf": 1.0,
     "persistent_in_other_pass": false,
     "type_label": "unidentified",
@@ -33,8 +72,47 @@
     },
     "provenance": {
       "produced_by": "skyblink_pipeline",
-      "git_sha": "b38be80b754ff5a7940535153a8f6bd42131317b",
-      "generated_at": "2026-10-06T15:22:00.754443+00:00",
+      "git_sha": "unknown",
+      "generated_at": "2026-10-06T16:08:46.388174+00:00",
+      "simulated": true
+    }
+  },
+  {
+    "id": "F_DENSE_4.27_1",
+    "field_id": "F_DENSE",
+    "ra_deg": 50.23422222222222,
+    "dec_deg": 60.05855555555556,
+    "band_um": 4.27,
+    "epochs": [
+      "2025-pass1",
+      "2025-pass2"
+    ],
+    "snr": 185.78231671438107,
+    "p_local": 0.0,
+    "p_trials_adjusted": 0.0,
+    "kind": "pair",
+    "dipole_separation_arcsec": 541.3274157275076,
+    "sharpness": 0.946791184469776,
+    "chi2_psf": 1.0,
+    "persistent_in_other_pass": false,
+    "type_label": "unidentified",
+    "status": "candidate",
+    "tiles": {
+      "epoch_a": "/data/tiles/F_DENSE/F_DENSE_4.27_1/epoch_a.png",
+      "epoch_b": "/data/tiles/F_DENSE/F_DENSE_4.27_1/epoch_b.png",
+      "diff": "/data/tiles/F_DENSE/F_DENSE_4.27_1/diff.png",
+      "snr": "/data/tiles/F_DENSE/F_DENSE_4.27_1/snr.png"
+    },
+    "notes": "",
+    "crossmatch": {
+      "catalog": null,
+      "id": null,
+      "sep_arcsec": null
+    },
+    "provenance": {
+      "produced_by": "skyblink_pipeline",
+      "git_sha": "unknown",
+      "generated_at": "2026-10-06T16:08:46.388174+00:00",
       "simulated": true
     }
   }

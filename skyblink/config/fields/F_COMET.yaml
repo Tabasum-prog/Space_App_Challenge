@@ -6,7 +6,7 @@ bands_um:
 center:
   dec_deg: 40
   ra_deg: 30
-delta_lambda_um: 0.02
+delta_lambda_um: 0.2
 expected_objects: []
 id: F_COMET
 name: Comet Field

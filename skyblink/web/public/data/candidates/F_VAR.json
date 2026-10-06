@@ -1,29 +1,29 @@
 [
   {
-    "id": "F_VAR_2.2_0",
+    "id": "F_VAR_1.25_0",
     "field_id": "F_VAR",
-    "ra_deg": 109.86254370438853,
-    "dec_deg": 20.041333333333334,
-    "band_um": 2.2,
+    "ra_deg": 109.94318473114726,
+    "dec_deg": 20.0,
+    "band_um": 1.25,
     "epochs": [
       "2025-pass1",
       "2025-pass2"
     ],
-    "snr": 7.39108013449258,
-    "p_local": 7.28204036367116e-14,
-    "p_trials_adjusted": 8.154266976119773e-11,
+    "snr": 8.422928201747723,
+    "p_local": 1.8359475568256052e-17,
+    "p_trials_adjusted": 2.86591413620477e-14,
     "kind": "pair",
-    "dipole_separation_arcsec": 417.56826155740737,
-    "sharpness": 0.7105448723037047,
+    "dipole_separation_arcsec": 619.9003931504544,
+    "sharpness": 0.6766138442854857,
     "chi2_psf": 1.0,
     "persistent_in_other_pass": false,
     "type_label": "unidentified",
     "status": "candidate",
     "tiles": {
-      "epoch_a": "/data/tiles/F_VAR/F_VAR_2.2_0/epoch_a.png",
-      "epoch_b": "/data/tiles/F_VAR/F_VAR_2.2_0/epoch_b.png",
-      "diff": "/data/tiles/F_VAR/F_VAR_2.2_0/diff.png",
-      "snr": "/data/tiles/F_VAR/F_VAR_2.2_0/snr.png"
+      "epoch_a": "/data/tiles/F_VAR/F_VAR_1.25_0/epoch_a.png",
+      "epoch_b": "/data/tiles/F_VAR/F_VAR_1.25_0/epoch_b.png",
+      "diff": "/data/tiles/F_VAR/F_VAR_1.25_0/diff.png",
+      "snr": "/data/tiles/F_VAR/F_VAR_1.25_0/snr.png"
     },
     "notes": "",
     "crossmatch": {
@@ -33,27 +33,27 @@
     },
     "provenance": {
       "produced_by": "skyblink_pipeline",
-      "git_sha": "b38be80b754ff5a7940535153a8f6bd42131317b",
-      "generated_at": "2026-10-06T15:22:00.754443+00:00",
+      "git_sha": "unknown",
+      "generated_at": "2026-10-06T16:08:46.388174+00:00",
       "simulated": true
     }
   },
   {
     "id": "F_VAR_3.3_0",
     "field_id": "F_VAR",
-    "ra_deg": 110.21259907054575,
-    "dec_deg": 19.817444444444444,
+    "ra_deg": 109.82039044040101,
+    "dec_deg": 19.903555555555556,
     "band_um": 3.3,
     "epochs": [
       "2025-pass1",
       "2025-pass2"
     ],
-    "snr": 10.017846074762414,
-    "p_local": 6.362287711525242e-24,
-    "p_trials_adjusted": 8.37418447008089e-21,
+    "snr": 4.363397442229537,
+    "p_local": 6.402899402800622e-06,
+    "p_trials_adjusted": 0.010387637131143542,
     "kind": "pair",
-    "dipole_separation_arcsec": 576.1992691923892,
-    "sharpness": 0.6442013720425889,
+    "dipole_separation_arcsec": 208.3796606237201,
+    "sharpness": 0.14652281074709864,
     "chi2_psf": 1.0,
     "persistent_in_other_pass": false,
     "type_label": "unidentified",
@@ -72,27 +72,27 @@
     },
     "provenance": {
       "produced_by": "skyblink_pipeline",
-      "git_sha": "b38be80b754ff5a7940535153a8f6bd42131317b",
-      "generated_at": "2026-10-06T15:22:00.754443+00:00",
+      "git_sha": "unknown",
+      "generated_at": "2026-10-06T16:08:46.388174+00:00",
       "simulated": true
     }
   },
   {
     "id": "F_VAR_3.3_1",
     "field_id": "F_VAR",
-    "ra_deg": 110.08430652797503,
-    "dec_deg": 19.862222222222222,
+    "ra_deg": 110.04032051337937,
+    "dec_deg": 19.972444444444445,
     "band_um": 3.3,
     "epochs": [
       "2025-pass1",
       "2025-pass2"
     ],
-    "snr": 8.705437083671669,
-    "p_local": 1.5817660970831306e-18,
-    "p_trials_adjusted": 2.0819556873385292e-15,
+    "snr": 11.013730852809662,
+    "p_local": 1.6406412499776283e-28,
+    "p_trials_adjusted": 2.6616669878803725e-25,
     "kind": "pair",
-    "dipole_separation_arcsec": 335.33836585770024,
-    "sharpness": 0.7792622274440261,
+    "dipole_separation_arcsec": 734.3100537757449,
+    "sharpness": 0.09543519520819355,
     "chi2_psf": 1.0,
     "persistent_in_other_pass": false,
     "type_label": "unidentified",
@@ -111,36 +111,36 @@
     },
     "provenance": {
       "produced_by": "skyblink_pipeline",
-      "git_sha": "b38be80b754ff5a7940535153a8f6bd42131317b",
-      "generated_at": "2026-10-06T15:22:00.754443+00:00",
+      "git_sha": "unknown",
+      "generated_at": "2026-10-06T16:08:46.388174+00:00",
       "simulated": true
     }
   },
   {
-    "id": "F_VAR_3.3_2",
+    "id": "F_VAR_4.27_0",
     "field_id": "F_VAR",
-    "ra_deg": 109.91386072141681,
-    "dec_deg": 19.98622222222222,
-    "band_um": 3.3,
+    "ra_deg": 109.81489218857655,
+    "dec_deg": 19.783,
+    "band_um": 4.27,
     "epochs": [
       "2025-pass1",
       "2025-pass2"
     ],
-    "snr": 8.339379497885494,
-    "p_local": 3.734068811325114e-17,
-    "p_trials_adjusted": 4.9148643487730334e-14,
+    "snr": 7.403686793607162,
+    "p_local": 6.622731176364228e-14,
+    "p_trials_adjusted": 1.0412405127283758e-10,
     "kind": "pair",
-    "dipole_separation_arcsec": 700.5446389456708,
-    "sharpness": 0.011672875063370499,
+    "dipole_separation_arcsec": 218.0772262563913,
+    "sharpness": 0.20424427353739488,
     "chi2_psf": 1.0,
     "persistent_in_other_pass": false,
     "type_label": "unidentified",
     "status": "candidate",
     "tiles": {
-      "epoch_a": "/data/tiles/F_VAR/F_VAR_3.3_2/epoch_a.png",
-      "epoch_b": "/data/tiles/F_VAR/F_VAR_3.3_2/epoch_b.png",
-      "diff": "/data/tiles/F_VAR/F_VAR_3.3_2/diff.png",
-      "snr": "/data/tiles/F_VAR/F_VAR_3.3_2/snr.png"
+      "epoch_a": "/data/tiles/F_VAR/F_VAR_4.27_0/epoch_a.png",
+      "epoch_b": "/data/tiles/F_VAR/F_VAR_4.27_0/epoch_b.png",
+      "diff": "/data/tiles/F_VAR/F_VAR_4.27_0/diff.png",
+      "snr": "/data/tiles/F_VAR/F_VAR_4.27_0/snr.png"
     },
     "notes": "",
     "crossmatch": {
@@ -150,8 +150,8 @@
     },
     "provenance": {
       "produced_by": "skyblink_pipeline",
-      "git_sha": "b38be80b754ff5a7940535153a8f6bd42131317b",
-      "generated_at": "2026-10-06T15:22:00.754443+00:00",
+      "git_sha": "unknown",
+      "generated_at": "2026-10-06T16:08:46.388174+00:00",
       "simulated": true
     }
   }

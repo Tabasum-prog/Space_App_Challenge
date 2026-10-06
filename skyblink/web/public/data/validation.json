@@ -1,16 +1,855 @@
 {
+  "produced_by": "skyblink_pipeline",
+  "git_sha": "unknown",
+  "generated_at": "2026-10-06T00:00:00Z",
+  "simulated": true,
   "injection_recovery": {
-    "total_injected": 3,
-    "recovered": 0,
-    "recovery_rate": 0.0
-  },
-  "known_object_recovery": {
-    "total_candidates": 11,
-    "known": 0,
-    "unknown": 11
+    "curve": [
+      {
+        "flux": 30,
+        "fraction": 0.0
+      },
+      {
+        "flux": 50,
+        "fraction": 0.0
+      },
+      {
+        "flux": 75,
+        "fraction": 0.15
+      },
+      {
+        "flux": 100,
+        "fraction": 0.65
+      },
+      {
+        "flux": 150,
+        "fraction": 1.0
+      },
+      {
+        "flux": 200,
+        "fraction": 1.0
+      },
+      {
+        "flux": 300,
+        "fraction": 1.0
+      },
+      {
+        "flux": 500,
+        "fraction": 1.0
+      }
+    ],
+    "motion": [
+      {
+        "flux": 30,
+        "motion": 15.207502014985527,
+        "recovered": 0
+      },
+      {
+        "flux": 30,
+        "motion": 14.594404790384914,
+        "recovered": 0
+      },
+      {
+        "flux": 30,
+        "motion": 5.136353855975107,
+        "recovered": 0
+      },
+      {
+        "flux": 30,
+        "motion": 14.056465296832647,
+        "recovered": 0
+      },
+      {
+        "flux": 30,
+        "motion": 13.465557927041731,
+        "recovered": 0
+      },
+      {
+        "flux": 30,
+        "motion": 2.172538896154745,
+        "recovered": 0
+      },
+      {
+        "flux": 30,
+        "motion": 11.323787878126765,
+        "recovered": 0
+      },
+      {
+        "flux": 30,
+        "motion": 4.22020175976175,
+        "recovered": 0
+      },
+      {
+        "flux": 30,
+        "motion": 5.004736519780531,
+        "recovered": 0
+      },
+      {
+        "flux": 30,
+        "motion": 13.886069011561041,
+        "recovered": 0
+      },
+      {
+        "flux": 30,
+        "motion": 5.609368883790993,
+        "recovered": 0
+      },
+      {
+        "flux": 30,
+        "motion": 19.403099602958417,
+        "recovered": 0
+      },
+      {
+        "flux": 30,
+        "motion": 14.92234037247299,
+        "recovered": 0
+      },
+      {
+        "flux": 30,
+        "motion": 11.339776113477408,
+        "recovered": 0
+      },
+      {
+        "flux": 30,
+        "motion": 14.253324522768068,
+        "recovered": 0
+      },
+      {
+        "flux": 30,
+        "motion": 7.983106143747038,
+        "recovered": 0
+      },
+      {
+        "flux": 30,
+        "motion": 9.557651801493677,
+        "recovered": 0
+      },
+      {
+        "flux": 30,
+        "motion": 3.4880235250795915,
+        "recovered": 0
+      },
+      {
+        "flux": 30,
+        "motion": 12.992538182541386,
+        "recovered": 0
+      },
+      {
+        "flux": 30,
+        "motion": 2.2038098667459893,
+        "recovered": 0
+      },
+      {
+        "flux": 50,
+        "motion": 6.213856714145822,
+        "recovered": 0
+      },
+      {
+        "flux": 50,
+        "motion": 2.862011024763148,
+        "recovered": 0
+      },
+      {
+        "flux": 50,
+        "motion": 7.44778000273785,
+        "recovered": 0
+      },
+      {
+        "flux": 50,
+        "motion": 15.655578972786003,
+        "recovered": 0
+      },
+      {
+        "flux": 50,
+        "motion": 3.901987383519426,
+        "recovered": 0
+      },
+      {
+        "flux": 50,
+        "motion": 17.59607514609494,
+        "recovered": 0
+      },
+      {
+        "flux": 50,
+        "motion": 10.769426112043806,
+        "recovered": 0
+      },
+      {
+        "flux": 50,
+        "motion": 13.46561984616944,
+        "recovered": 0
+      },
+      {
+        "flux": 50,
+        "motion": 16.286395686021343,
+        "recovered": 0
+      },
+      {
+        "flux": 50,
+        "motion": 14.041691936636882,
+        "recovered": 0
+      },
+      {
+        "flux": 50,
+        "motion": 7.101678486376852,
+        "recovered": 0
+      },
+      {
+        "flux": 50,
+        "motion": 12.32761896495867,
+        "recovered": 0
+      },
+      {
+        "flux": 50,
+        "motion": 14.580691884549388,
+        "recovered": 0
+      },
+      {
+        "flux": 50,
+        "motion": 8.036626336447389,
+        "recovered": 0
+      },
+      {
+        "flux": 50,
+        "motion": 15.608765290903191,
+        "recovered": 0
+      },
+      {
+        "flux": 50,
+        "motion": 14.402415712399359,
+        "recovered": 0
+      },
+      {
+        "flux": 50,
+        "motion": 6.165006427757778,
+        "recovered": 0
+      },
+      {
+        "flux": 50,
+        "motion": 7.987305313051473,
+        "recovered": 0
+      },
+      {
+        "flux": 50,
+        "motion": 13.612652161792488,
+        "recovered": 0
+      },
+      {
+        "flux": 50,
+        "motion": 16.41554080055535,
+        "recovered": 0
+      },
+      {
+        "flux": 75,
+        "motion": 11.840674773100133,
+        "recovered": 0
+      },
+      {
+        "flux": 75,
+        "motion": 8.810320004365966,
+        "recovered": 0
+      },
+      {
+        "flux": 75,
+        "motion": 9.298415720198102,
+        "recovered": 0
+      },
+      {
+        "flux": 75,
+        "motion": 12.943868161129751,
+        "recovered": 0
+      },
+      {
+        "flux": 75,
+        "motion": 8.449810366749706,
+        "recovered": 0
+      },
+      {
+        "flux": 75,
+        "motion": 7.339050984976144,
+        "recovered": 0
+      },
+      {
+        "flux": 75,
+        "motion": 1.1193732416364177,
+        "recovered": 0
+      },
+      {
+        "flux": 75,
+        "motion": 12.400969895922097,
+        "recovered": 0
+      },
+      {
+        "flux": 75,
+        "motion": 13.046530466202817,
+        "recovered": 0
+      },
+      {
+        "flux": 75,
+        "motion": 13.368231549475231,
+        "recovered": 0
+      },
+      {
+        "flux": 75,
+        "motion": 15.74555735242493,
+        "recovered": 0
+      },
+      {
+        "flux": 75,
+        "motion": 8.79481405858265,
+        "recovered": 0
+      },
+      {
+        "flux": 75,
+        "motion": 15.91846789999728,
+        "recovered": 1
+      },
+      {
+        "flux": 75,
+        "motion": 13.9323572770433,
+        "recovered": 0
+      },
+      {
+        "flux": 75,
+        "motion": 14.57294915448605,
+        "recovered": 1
+      },
+      {
+        "flux": 75,
+        "motion": 12.87823570982802,
+        "recovered": 0
+      },
+      {
+        "flux": 75,
+        "motion": 7.912496546004808,
+        "recovered": 0
+      },
+      {
+        "flux": 75,
+        "motion": 4.147168975202636,
+        "recovered": 0
+      },
+      {
+        "flux": 75,
+        "motion": 13.780683688628448,
+        "recovered": 0
+      },
+      {
+        "flux": 75,
+        "motion": 16.680596615300548,
+        "recovered": 1
+      },
+      {
+        "flux": 100,
+        "motion": 15.449750378676887,
+        "recovered": 1
+      },
+      {
+        "flux": 100,
+        "motion": 10.335549954771093,
+        "recovered": 0
+      },
+      {
+        "flux": 100,
+        "motion": 11.324530813750407,
+        "recovered": 0
+      },
+      {
+        "flux": 100,
+        "motion": 10.145289718373709,
+        "recovered": 0
+      },
+      {
+        "flux": 100,
+        "motion": 12.537797302379957,
+        "recovered": 1
+      },
+      {
+        "flux": 100,
+        "motion": 13.449145656243324,
+        "recovered": 1
+      },
+      {
+        "flux": 100,
+        "motion": 14.473657373611209,
+        "recovered": 1
+      },
+      {
+        "flux": 100,
+        "motion": 20.410649582258735,
+        "recovered": 1
+      },
+      {
+        "flux": 100,
+        "motion": 12.658813395719655,
+        "recovered": 1
+      },
+      {
+        "flux": 100,
+        "motion": 8.951928555469383,
+        "recovered": 0
+      },
+      {
+        "flux": 100,
+        "motion": 11.066938550987,
+        "recovered": 0
+      },
+      {
+        "flux": 100,
+        "motion": 16.78200708824281,
+        "recovered": 1
+      },
+      {
+        "flux": 100,
+        "motion": 12.375594019652263,
+        "recovered": 1
+      },
+      {
+        "flux": 100,
+        "motion": 19.397612989168337,
+        "recovered": 0
+      },
+      {
+        "flux": 100,
+        "motion": 10.280250200666273,
+        "recovered": 1
+      },
+      {
+        "flux": 100,
+        "motion": 14.91420216513142,
+        "recovered": 1
+      },
+      {
+        "flux": 100,
+        "motion": 10.131745041878014,
+        "recovered": 1
+      },
+      {
+        "flux": 100,
+        "motion": 10.434888300429249,
+        "recovered": 1
+      },
+      {
+        "flux": 100,
+        "motion": 5.153358147657717,
+        "recovered": 1
+      },
+      {
+        "flux": 100,
+        "motion": 4.09851725124424,
+        "recovered": 0
+      },
+      {
+        "flux": 150,
+        "motion": 16.135434882393056,
+        "recovered": 1
+      },
+      {
+        "flux": 150,
+        "motion": 12.189454307111813,
+        "recovered": 1
+      },
+      {
+        "flux": 150,
+        "motion": 8.844692931943667,
+        "recovered": 1
+      },
+      {
+        "flux": 150,
+        "motion": 9.145465502250063,
+        "recovered": 1
+      },
+      {
+        "flux": 150,
+        "motion": 2.1602615132870953,
+        "recovered": 1
+      },
+      {
+        "flux": 150,
+        "motion": 16.38399066451259,
+        "recovered": 1
+      },
+      {
+        "flux": 150,
+        "motion": 13.270085803055089,
+        "recovered": 1
+      },
+      {
+        "flux": 150,
+        "motion": 19.401421941975837,
+        "recovered": 1
+      },
+      {
+        "flux": 150,
+        "motion": 2.6850155570443657,
+        "recovered": 1
+      },
+      {
+        "flux": 150,
+        "motion": 12.254804782562005,
+        "recovered": 1
+      },
+      {
+        "flux": 150,
+        "motion": 11.879943722591516,
+        "recovered": 1
+      },
+      {
+        "flux": 150,
+        "motion": 13.195136732754756,
+        "recovered": 1
+      },
+      {
+        "flux": 150,
+        "motion": 18.23488691956992,
+        "recovered": 1
+      },
+      {
+        "flux": 150,
+        "motion": 6.659110466868285,
+        "recovered": 1
+      },
+      {
+        "flux": 150,
+        "motion": 8.127407767299005,
+        "recovered": 1
+      },
+      {
+        "flux": 150,
+        "motion": 8.475464932451313,
+        "recovered": 1
+      },
+      {
+        "flux": 150,
+        "motion": 6.307001223950441,
+        "recovered": 1
+      },
+      {
+        "flux": 150,
+        "motion": 8.042594472950338,
+        "recovered": 1
+      },
+      {
+        "flux": 150,
+        "motion": 0.34329906109561265,
+        "recovered": 1
+      },
+      {
+        "flux": 150,
+        "motion": 15.805192216022489,
+        "recovered": 1
+      },
+      {
+        "flux": 200,
+        "motion": 14.684608368783081,
+        "recovered": 1
+      },
+      {
+        "flux": 200,
+        "motion": 3.000765694557054,
+        "recovered": 1
+      },
+      {
+        "flux": 200,
+        "motion": 11.5617910678784,
+        "recovered": 1
+      },
+      {
+        "flux": 200,
+        "motion": 14.346171157476254,
+        "recovered": 1
+      },
+      {
+        "flux": 200,
+        "motion": 15.041278998044524,
+        "recovered": 1
+      },
+      {
+        "flux": 200,
+        "motion": 11.208066802852604,
+        "recovered": 1
+      },
+      {
+        "flux": 200,
+        "motion": 15.549492419198012,
+        "recovered": 1
+      },
+      {
+        "flux": 200,
+        "motion": 18.32030031220266,
+        "recovered": 1
+      },
+      {
+        "flux": 200,
+        "motion": 4.299345513059797,
+        "recovered": 1
+      },
+      {
+        "flux": 200,
+        "motion": 17.883140524432125,
+        "recovered": 1
+      },
+      {
+        "flux": 200,
+        "motion": 14.098603148363427,
+        "recovered": 1
+      },
+      {
+        "flux": 200,
+        "motion": 12.77815162414232,
+        "recovered": 1
+      },
+      {
+        "flux": 200,
+        "motion": 15.741074593116634,
+        "recovered": 1
+      },
+      {
+        "flux": 200,
+        "motion": 6.48273940602255,
+        "recovered": 1
+      },
+      {
+        "flux": 200,
+        "motion": 12.57589497903856,
+        "recovered": 1
+      },
+      {
+        "flux": 200,
+        "motion": 15.458382589071967,
+        "recovered": 1
+      },
+      {
+        "flux": 200,
+        "motion": 4.739879861307392,
+        "recovered": 1
+      },
+      {
+        "flux": 200,
+        "motion": 4.129298680248042,
+        "recovered": 1
+      },
+      {
+        "flux": 200,
+        "motion": 10.430476728761567,
+        "recovered": 1
+      },
+      {
+        "flux": 200,
+        "motion": 18.571281892407413,
+        "recovered": 1
+      },
+      {
+        "flux": 300,
+        "motion": 15.457870430310253,
+        "recovered": 1
+      },
+      {
+        "flux": 300,
+        "motion": 12.089827050002231,
+        "recovered": 1
+      },
+      {
+        "flux": 300,
+        "motion": 10.29738527385307,
+        "recovered": 1
+      },
+      {
+        "flux": 300,
+        "motion": 4.620636400173712,
+        "recovered": 1
+      },
+      {
+        "flux": 300,
+        "motion": 13.639069731901072,
+        "recovered": 1
+      },
+      {
+        "flux": 300,
+        "motion": 13.003126665080087,
+        "recovered": 1
+      },
+      {
+        "flux": 300,
+        "motion": 11.176635551318657,
+        "recovered": 1
+      },
+      {
+        "flux": 300,
+        "motion": 17.290896000987765,
+        "recovered": 1
+      },
+      {
+        "flux": 300,
+        "motion": 13.399593848024073,
+        "recovered": 1
+      },
+      {
+        "flux": 300,
+        "motion": 11.360248206615852,
+        "recovered": 1
+      },
+      {
+        "flux": 300,
+        "motion": 13.31446063383829,
+        "recovered": 1
+      },
+      {
+        "flux": 300,
+        "motion": 10.63291580342008,
+        "recovered": 1
+      },
+      {
+        "flux": 300,
+        "motion": 15.817504562068013,
+        "recovered": 1
+      },
+      {
+        "flux": 300,
+        "motion": 14.312871599274036,
+        "recovered": 1
+      },
+      {
+        "flux": 300,
+        "motion": 6.772566533929936,
+        "recovered": 1
+      },
+      {
+        "flux": 300,
+        "motion": 17.651848759719478,
+        "recovered": 1
+      },
+      {
+        "flux": 300,
+        "motion": 7.180148294167916,
+        "recovered": 1
+      },
+      {
+        "flux": 300,
+        "motion": 7.056811813708766,
+        "recovered": 1
+      },
+      {
+        "flux": 300,
+        "motion": 14.041861903270325,
+        "recovered": 1
+      },
+      {
+        "flux": 300,
+        "motion": 11.678987880980346,
+        "recovered": 1
+      },
+      {
+        "flux": 500,
+        "motion": 3.068161236305194,
+        "recovered": 1
+      },
+      {
+        "flux": 500,
+        "motion": 4.649036101951601,
+        "recovered": 1
+      },
+      {
+        "flux": 500,
+        "motion": 13.777004308680358,
+        "recovered": 1
+      },
+      {
+        "flux": 500,
+        "motion": 8.995016530117509,
+        "recovered": 1
+      },
+      {
+        "flux": 500,
+        "motion": 16.9588783693832,
+        "recovered": 1
+      },
+      {
+        "flux": 500,
+        "motion": 3.313064000209839,
+        "recovered": 1
+      },
+      {
+        "flux": 500,
+        "motion": 17.98468024869286,
+        "recovered": 1
+      },
+      {
+        "flux": 500,
+        "motion": 11.287372573921164,
+        "recovered": 1
+      },
+      {
+        "flux": 500,
+        "motion": 5.328959061619365,
+        "recovered": 1
+      },
+      {
+        "flux": 500,
+        "motion": 17.502046931342775,
+        "recovered": 1
+      },
+      {
+        "flux": 500,
+        "motion": 7.294286128912985,
+        "recovered": 1
+      },
+      {
+        "flux": 500,
+        "motion": 15.823884930613218,
+        "recovered": 1
+      },
+      {
+        "flux": 500,
+        "motion": 12.264959228053918,
+        "recovered": 1
+      },
+      {
+        "flux": 500,
+        "motion": 19.97194044809962,
+        "recovered": 1
+      },
+      {
+        "flux": 500,
+        "motion": 12.461411642729933,
+        "recovered": 1
+      },
+      {
+        "flux": 500,
+        "motion": 15.148958260733469,
+        "recovered": 1
+      },
+      {
+        "flux": 500,
+        "motion": 12.48081595881947,
+        "recovered": 1
+      },
+      {
+        "flux": 500,
+        "motion": 8.6129949920811,
+        "recovered": 1
+      },
+      {
+        "flux": 500,
+        "motion": 15.831115097936292,
+        "recovered": 1
+      },
+      {
+        "flux": 500,
+        "motion": 19.190102206836457,
+        "recovered": 1
+      }
+    ],
+    "bright_recovered": 80,
+    "bright_total": 80
   },
   "false_positive_audit": {
-    "false_positives": 11,
-    "false_positive_rate": 1.0
+    "trials": 10,
+    "avg_fp_found": 0.0,
+    "avg_fp_expected": 0.4
+  },
+  "known_object_recovery": {
+    "total": 246,
+    "recovered": 33
   }
 }
