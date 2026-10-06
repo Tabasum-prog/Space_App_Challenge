@@ -13,7 +13,7 @@ import subprocess
 
 def get_git_sha():
     try:
-        return subprocess.check_output(['git', 'rev-parse', 'HEAD']).decode('ascii').strip()
+        return subprocess.check_output(['git', 'rev-parse', 'HEAD'], stderr=subprocess.DEVNULL, cwd=os.path.dirname(__file__)).decode('ascii').strip()
     except Exception:
         return 'unknown'
 
@@ -434,6 +434,15 @@ def run_field(field_cfg, data_dir, wcs_out, cat_dir, out_dir_cands, out_dir_tile
     return all_cands
 
 def main():
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--fields', type=str, help='Comma separated list of field IDs to process')
+    args = parser.parse_args()
+
+    allowed_fields = None
+    if args.fields:
+        allowed_fields = set(args.fields.split(','))
+
     print('Running pipeline...')
     config_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../config'))
     data_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../data/fits'))
@@ -453,6 +462,10 @@ def main():
             field = yaml.safe_load(fp)
         
         field_id = field['id']
+        
+        if allowed_fields and field_id not in allowed_fields:
+            continue
+            
         print(f"Processing {field_id}...")
         
         wcs_out = {
@@ -465,8 +478,15 @@ def main():
         
         wcs_out_hdr = fits.Header(wcs_out)
         
+        cands = []
         if field['pair_status'] == 'ok' and len(field['passes_available']) >= 2:
-            cands = run_field(field, data_dir, wcs_out_hdr, cat_dir, out_dir_cands, out_dir_tiles)
+            cache_file = os.path.join(out_dir_cands, f"{field_id}.json")
+            if os.path.exists(cache_file):
+                print(f"Using cached candidates for {field_id}...")
+                with open(cache_file) as fp:
+                    cands = json.load(fp)
+            else:
+                cands = run_field(field, data_dir, wcs_out_hdr, cat_dir, out_dir_cands, out_dir_tiles)
             
             manifest = field.copy()
             manifest['candidates'] = [c['id'] for c in cands]
@@ -496,11 +516,14 @@ def main():
 
     spectra_all = []
     follow_all = []
-    
+
     # We will just run extraction on the fields that matter for the test
     for yaml_file in glob.glob(os.path.join(config_dir, 'fields', '*.yaml')):
         with open(yaml_file) as fp:
             field = yaml.safe_load(fp)
+            
+        if allowed_fields and field['id'] not in allowed_fields:
+            continue
             
         wcs_out = {
             'CRPIX1': 128, 'CRPIX2': 128,

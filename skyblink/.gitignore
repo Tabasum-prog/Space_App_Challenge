@@ -8,6 +8,8 @@ __pycache__/
 venv/
 env/
 .env
-web/public/data/
-data/
-*.fits
+data/fits/
+web/public/data/fits/
+votes.db
+test-results/
+playwright-report/
