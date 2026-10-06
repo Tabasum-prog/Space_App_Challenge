@@ -69,19 +69,35 @@ def generate_exposure(field, pass_idx, exp_idx, out_dir):
     # Target positions based on field ID
     mjd = 60000.0 + pass_idx * 180.0 + exp_idx * 0.01
     
+    truth_list = []
+    
     if field['id'] == 'F_MOVER':
         # Parallax-like mover: shifts in RA in pass 2
         shift_pix = 10 if pass_idx == 1 else 0
         cy_ast = int(np.round(128 + dither_y))
         cx_ast = int(np.round(128 + dither_x + shift_pix))
+        true_flux_ast = 200.0
         if 0 <= cy_ast < 256 and 0 <= cx_ast < 256:
-            flux[cy_ast, cx_ast] += 200.0
+            flux[cy_ast, cx_ast] += true_flux_ast
+            ra_ast = field["center"]["ra_deg"] + (128 - crpix1 + cx_ast) * (-cdelt) / np.cos(np.radians(field["center"]["dec_deg"]))
+            dec_ast = field["center"]["dec_deg"] + (cy_ast - crpix2) * cdelt
+            truth_list.append({
+                "id": "ast1", "kind": "asteroid", "mjd": mjd, "pass": pass_idx, "exp": exp_idx,
+                "ra": ra_ast, "dec": dec_ast, "true_flux": true_flux_ast, "model": "flat"
+            })
             
         # fixed source
         cy_star = int(np.round(128 + dither_y))
         cx_star = int(np.round(128 + dither_x))
+        true_flux_star = 300.0
         if 0 <= cy_star < 256 and 0 <= cx_star < 256:
-            flux[cy_star, cx_star] += 300.0
+            flux[cy_star, cx_star] += true_flux_star
+            ra_star = field["center"]["ra_deg"] + (128 - crpix1 + cx_star) * (-cdelt) / np.cos(np.radians(field["center"]["dec_deg"]))
+            dec_star = field["center"]["dec_deg"] + (cy_star - crpix2) * cdelt
+            truth_list.append({
+                "id": "star1", "kind": "star", "mjd": mjd, "pass": pass_idx, "exp": exp_idx,
+                "ra": ra_star, "dec": dec_star, "true_flux": true_flux_star, "model": "flat"
+            })
         
     if field['id'] == 'F_COMET':
         # Comet moving 5 pixels per pass
@@ -94,7 +110,15 @@ def generate_exposure(field, pass_idx, exp_idx, out_dir):
             bump = 0.0
             if abs(band_wave - 4.27) < 0.2:
                 bump = 500.0 # SNR > 3 (noise is 5)
-            flux[cy, cx] += 100.0 + bump
+            true_flux = 100.0 + bump
+            flux[cy, cx] += true_flux
+            ra_comet = field["center"]["ra_deg"] + (cx - crpix1) * (-cdelt) / np.cos(np.radians(field["center"]["dec_deg"]))
+            dec_comet = field["center"]["dec_deg"] + (cy - crpix2) * cdelt
+            truth_list.append({
+                "id": "comet1", "kind": "comet", "mjd": mjd, "pass": pass_idx, "exp": exp_idx,
+                "ra": ra_comet, "dec": dec_comet, "true_flux": true_flux, "model": "co2_bump",
+                "wave": float(band_wave)
+            })
 
     header = {
         "CRPIX1": crpix1,
@@ -110,13 +134,15 @@ def generate_exposure(field, pass_idx, exp_idx, out_dir):
     
     filename = os.path.join(out_dir, f"{field['id']}_pass{pass_idx+1}_exp{exp_idx}.fits")
     make_fits(filename, flux, variance, flags, header, wavelength_map)
-    return filename
+    return filename, truth_list
 
 def generate_mock_data():
     set_seed(42)
     config_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../config"))
     data_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../data/fits"))
+    truth_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../data/truth"))
     os.makedirs(data_dir, exist_ok=True)
+    os.makedirs(truth_dir, exist_ok=True)
     
     fields = read_yaml_fields(config_dir)
     
@@ -125,10 +151,17 @@ def generate_mock_data():
         f_dir = os.path.join(data_dir, f["id"])
         os.makedirs(f_dir, exist_ok=True)
         count = 0
+        field_truth = []
         for p in range(f["passes"]):
             for exp in range(41):
-                generate_exposure(f, p, exp, f_dir)
+                _, truth = generate_exposure(f, p, exp, f_dir)
+                field_truth.extend(truth)
                 count += 1
+        
+        # Write truth file
+        with open(os.path.join(truth_dir, f"{f['id']}.json"), "w") as out:
+            json.dump(field_truth, out, indent=2)
+            
         print(f"| {f['id']:<15} | {count} files generated |")
                 
     cat_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../data/catalogs"))
@@ -137,8 +170,22 @@ def generate_mock_data():
         json.dump([{"id": "star1", "ra": 10.0, "dec": 20.0, "pmra": 0.1}], out)
     with open(os.path.join(cat_dir, "synthetic_mpc.json"), "w") as out:
         json.dump([
-            {"id": "ast1", "ra": 10.0, "dec": 20.0},
-            {"id": "comet1", "ra": 30.0, "dec": 40.0}
+            {
+                "id": "ast1", 
+                "ra": 10.0, 
+                "dec": 20.0,
+                "pmra": - (10.0 * 6.2 / 3600) / np.cos(np.radians(20)) / 180.0, # degrees per day
+                "pmdec": 0.0,
+                "epoch": 60000.0
+            },
+            {
+                "id": "comet1", 
+                "ra": 30.0, 
+                "dec": 40.0,
+                "pmra": 0.0,
+                "pmdec": (5.0 * 6.2 / 3600) / 180.0, # degrees per day
+                "epoch": 60000.0
+            }
         ], out)
         
     print("Synthetic data generated successfully.")

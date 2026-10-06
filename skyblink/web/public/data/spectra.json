@@ -1,0 +1,33 @@
+[
+  {
+    "id": "star1",
+    "spectrum": [
+      {
+        "wave": 1.25,
+        "flux": 448.75817855672875,
+        "flux_err": 53.586139171120344
+      },
+      {
+        "wave": 2.2,
+        "flux": 448.3629402110459,
+        "flux_err": 52.89907016343413
+      },
+      {
+        "wave": 3.3,
+        "flux": 445.5537516596435,
+        "flux_err": 51.8573046229898
+      },
+      {
+        "wave": 4.27,
+        "flux": 452.78932388587594,
+        "flux_err": 55.55775114987459
+      }
+    ],
+    "provenance": {
+      "produced_by": "skyblink_pipeline",
+      "git_sha": "unknown",
+      "generated_at": "2026-10-06T15:50:31.428570+00:00",
+      "simulated": true
+    }
+  }
+]

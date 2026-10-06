@@ -1,0 +1,80 @@
+[
+  {
+    "id": "F_MOVER_3.3_0",
+    "field_id": "F_MOVER",
+    "ra_deg": 10.084306527975036,
+    "dec_deg": 19.901833333333332,
+    "band_um": 3.3,
+    "epochs": [
+      "2025-pass1",
+      "2025-pass2"
+    ],
+    "snr": 9.122531356819284,
+    "p_local": 3.6694867423508594e-20,
+    "p_trials_adjusted": 5.221679634365273e-17,
+    "kind": "pair",
+    "dipole_separation_arcsec": 796.1548155225784,
+    "sharpness": 0.8483665683924054,
+    "chi2_psf": 1.0,
+    "persistent_in_other_pass": false,
+    "type_label": "unidentified",
+    "status": "candidate",
+    "tiles": {
+      "epoch_a": "/data/tiles/F_MOVER/F_MOVER_3.3_0/epoch_a.png",
+      "epoch_b": "/data/tiles/F_MOVER/F_MOVER_3.3_0/epoch_b.png",
+      "diff": "/data/tiles/F_MOVER/F_MOVER_3.3_0/diff.png",
+      "snr": "/data/tiles/F_MOVER/F_MOVER_3.3_0/snr.png"
+    },
+    "notes": "",
+    "crossmatch": {
+      "catalog": null,
+      "id": null,
+      "sep_arcsec": null
+    },
+    "provenance": {
+      "produced_by": "skyblink_pipeline",
+      "git_sha": "b38be80b754ff5a7940535153a8f6bd42131317b",
+      "generated_at": "2026-10-06T15:22:00.754443+00:00",
+      "simulated": true
+    }
+  },
+  {
+    "id": "F_MOVER_4.27_0",
+    "field_id": "F_MOVER",
+    "ra_deg": 10.126459791962555,
+    "dec_deg": 20.020666666666667,
+    "band_um": 4.27,
+    "epochs": [
+      "2025-pass1",
+      "2025-pass2"
+    ],
+    "snr": 54.876744504487974,
+    "p_local": 0.0,
+    "p_trials_adjusted": 0.0,
+    "kind": "pair",
+    "dipole_separation_arcsec": 338.6890088744029,
+    "sharpness": 0.9033403951811646,
+    "chi2_psf": 1.0,
+    "persistent_in_other_pass": false,
+    "type_label": "unidentified",
+    "status": "candidate",
+    "tiles": {
+      "epoch_a": "/data/tiles/F_MOVER/F_MOVER_4.27_0/epoch_a.png",
+      "epoch_b": "/data/tiles/F_MOVER/F_MOVER_4.27_0/epoch_b.png",
+      "diff": "/data/tiles/F_MOVER/F_MOVER_4.27_0/diff.png",
+      "snr": "/data/tiles/F_MOVER/F_MOVER_4.27_0/snr.png"
+    },
+    "notes": "",
+    "crossmatch": {
+      "catalog": null,
+      "id": null,
+      "sep_arcsec": null
+    },
+    "provenance": {
+      "produced_by": "skyblink_pipeline",
+      "git_sha": "b38be80b754ff5a7940535153a8f6bd42131317b",
+      "generated_at": "2026-10-06T15:22:00.754443+00:00",
+      "simulated": true
+    }
+  }
+]

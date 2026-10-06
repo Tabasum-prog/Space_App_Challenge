@@ -534,32 +534,15 @@ def main():
         }
         wcs_out_hdr = fits.Header(wcs_out)
         
-        objects = []
-        if field['id'] == 'F_MOVER':
-            # asteroid
-            objects.append({
-                'id': 'ast1',
-                'ephemeris': {
-                    '2025-pass1': {'ra': 10.0, 'dec': 20.0},
-                    '2025-pass2': {'ra': 10.0 - (10.0*6.2/3600)/np.cos(np.radians(20)), 'dec': 20.0},
-                    '2025-pass3': {'ra': 10.0, 'dec': 20.0}
-                }
-            })
-            # fixed source
-            objects.append({'id': 'star1', 'ra': 10.0, 'dec': 20.0})
-        elif field['id'] == 'F_COMET':
-            # comet
-            objects.append({
-                'id': 'comet1',
-                'ephemeris': {
-                    '2025-pass1': {'ra': 30.0, 'dec': 40.0},
-                    '2025-pass2': {'ra': 30.0, 'dec': 40.0 + 5.0*6.2/3600},
-                    '2025-pass3': {'ra': 30.0, 'dec': 40.0 + 10.0*6.2/3600}
-                }
-            })
+        from pipeline.skyblink_pipeline.crossmatch.ephemeris import SyntheticCrossMatch
+        crossmatch = SyntheticCrossMatch(cat_dir)
+        
+        # Get all objects that are in this field's region
+        # For simplicity, we just pass all objects in the MPC/Gaia catalogs to forced photometry
+        objects = [{'id': obj_id} for obj_id in crossmatch.get_all_ids()]
             
         if objects:
-            res = extract_forced_photometry(field, data_dir, wcs_out_hdr, objects, out_dir_tiles)
+            res = extract_forced_photometry(field, data_dir, wcs_out_hdr, objects, out_dir_tiles, crossmatch)
             for obj_id, data in res.items():
                 if obj_id == 'star1':
                     spectra_all.append({

@@ -1,0 +1,16 @@
+{
+  "injection_recovery": {
+    "total_injected": 3,
+    "recovered": 0,
+    "recovery_rate": 0.0
+  },
+  "known_object_recovery": {
+    "total_candidates": 11,
+    "known": 0,
+    "unknown": 11
+  },
+  "false_positive_audit": {
+    "false_positives": 11,
+    "false_positive_rate": 1.0
+  }
+}

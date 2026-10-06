@@ -1,0 +1,260 @@
+[
+  {
+    "id": "ast1",
+    "track": [
+      {
+        "mjd": 60000.02,
+        "flux": 516.871214858126,
+        "flux_err": 6.335396980613037,
+        "band": 1.25,
+        "pass": "2025-pass1",
+        "image": "/data/tiles/F_MOVER/ast1/2025-pass1_1.25.png"
+      },
+      {
+        "mjd": 60180.02,
+        "flux": 202.737066007554,
+        "flux_err": 6.344675087093453,
+        "band": 1.25,
+        "pass": "2025-pass2",
+        "image": "/data/tiles/F_MOVER/ast1/2025-pass2_1.25.png"
+      },
+      {
+        "mjd": 60360.02,
+        "flux": 511.87210403501365,
+        "flux_err": 6.332301257496067,
+        "band": 1.25,
+        "pass": "2025-pass3",
+        "image": "/data/tiles/F_MOVER/ast1/2025-pass3_1.25.png"
+      },
+      {
+        "mjd": 60000.1,
+        "flux": 507.808013828717,
+        "flux_err": 6.319903201045744,
+        "band": 2.2,
+        "pass": "2025-pass1",
+        "image": "/data/tiles/F_MOVER/ast1/2025-pass1_2.2.png"
+      },
+      {
+        "mjd": 60180.09,
+        "flux": 227.80863189157975,
+        "flux_err": 6.350852961085883,
+        "band": 2.2,
+        "pass": "2025-pass2",
+        "image": "/data/tiles/F_MOVER/ast1/2025-pass2_2.2.png"
+      },
+      {
+        "mjd": 60360.09,
+        "flux": 518.3505569756751,
+        "flux_err": 6.329204020207578,
+        "band": 2.2,
+        "pass": "2025-pass3",
+        "image": "/data/tiles/F_MOVER/ast1/2025-pass3_2.2.png"
+      },
+      {
+        "mjd": 60000.18,
+        "flux": 500.7209916659517,
+        "flux_err": 6.338491191777053,
+        "band": 3.3,
+        "pass": "2025-pass1",
+        "image": "/data/tiles/F_MOVER/ast1/2025-pass1_3.3.png"
+      },
+      {
+        "mjd": 60180.17,
+        "flux": 214.48042296931493,
+        "flux_err": 6.350852961085883,
+        "band": 3.3,
+        "pass": "2025-pass2",
+        "image": "/data/tiles/F_MOVER/ast1/2025-pass2_3.3.png"
+      },
+      {
+        "mjd": 60360.18,
+        "flux": 517.0596967730638,
+        "flux_err": 6.319903201045744,
+        "band": 3.3,
+        "pass": "2025-pass3",
+        "image": "/data/tiles/F_MOVER/ast1/2025-pass3_3.3.png"
+      },
+      {
+        "mjd": 60000.26,
+        "flux": 522.0563550608937,
+        "flux_err": 6.313695043161272,
+        "band": 4.27,
+        "pass": "2025-pass1",
+        "image": "/data/tiles/F_MOVER/ast1/2025-pass1_4.27.png"
+      },
+      {
+        "mjd": 60180.25,
+        "flux": 217.31223525388668,
+        "flux_err": 6.372428354815368,
+        "band": 4.27,
+        "pass": "2025-pass2",
+        "image": "/data/tiles/F_MOVER/ast1/2025-pass2_4.27.png"
+      },
+      {
+        "mjd": 60360.26,
+        "flux": 519.6030630758651,
+        "flux_err": 6.323004994214598,
+        "band": 4.27,
+        "pass": "2025-pass3",
+        "image": "/data/tiles/F_MOVER/ast1/2025-pass3_4.27.png"
+      }
+    ],
+    "spectrum": [
+      {
+        "wave": 1.25,
+        "flux": 410.4934616335645,
+        "flux_err": 84.8243776803828
+      },
+      {
+        "wave": 2.2,
+        "flux": 417.9890675653239,
+        "flux_err": 77.68059229776586
+      },
+      {
+        "wave": 3.3,
+        "flux": 410.7537038027769,
+        "flux_err": 80.22072175911845
+      },
+      {
+        "wave": 4.27,
+        "flux": 419.65721779688175,
+        "flux_err": 82.60901703625701
+      }
+    ],
+    "provenance": {
+      "produced_by": "skyblink_pipeline",
+      "git_sha": "unknown",
+      "generated_at": "2026-10-06T15:50:31.428570+00:00",
+      "simulated": true
+    }
+  },
+  {
+    "id": "comet1",
+    "track": [
+      {
+        "mjd": 60000.02,
+        "flux": 113.33163506005785,
+        "flux_err": 6.3105886739483115,
+        "band": 1.25,
+        "pass": "2025-pass1",
+        "image": "/data/tiles/F_COMET/comet1/2025-pass1_1.25.png"
+      },
+      {
+        "mjd": 60180.02,
+        "flux": 105.06665490390914,
+        "flux_err": 6.3105886739483115,
+        "band": 1.25,
+        "pass": "2025-pass2",
+        "image": "/data/tiles/F_COMET/comet1/2025-pass2_1.25.png"
+      },
+      {
+        "mjd": 60360.01,
+        "flux": 118.12520804046015,
+        "flux_err": 6.338491191777053,
+        "band": 1.25,
+        "pass": "2025-pass3",
+        "image": "/data/tiles/F_COMET/comet1/2025-pass3_1.25.png"
+      },
+      {
+        "mjd": 60000.09,
+        "flux": 115.0103719034532,
+        "flux_err": 6.332301257496067,
+        "band": 2.2,
+        "pass": "2025-pass1",
+        "image": "/data/tiles/F_COMET/comet1/2025-pass1_2.2.png"
+      },
+      {
+        "mjd": 60180.1,
+        "flux": 103.61170275863648,
+        "flux_err": 6.335396980613037,
+        "band": 2.2,
+        "pass": "2025-pass2",
+        "image": "/data/tiles/F_COMET/comet1/2025-pass2_2.2.png"
+      },
+      {
+        "mjd": 60360.09,
+        "flux": 113.73829011379019,
+        "flux_err": 6.338491191777053,
+        "band": 2.2,
+        "pass": "2025-pass3",
+        "image": "/data/tiles/F_COMET/comet1/2025-pass3_2.2.png"
+      },
+      {
+        "mjd": 60000.18,
+        "flux": 115.16307069468567,
+        "flux_err": 6.338491191777053,
+        "band": 3.3,
+        "pass": "2025-pass1",
+        "image": "/data/tiles/F_COMET/comet1/2025-pass1_3.3.png"
+      },
+      {
+        "mjd": 60180.18,
+        "flux": 115.21247980019122,
+        "flux_err": 6.32610526652357,
+        "band": 3.3,
+        "pass": "2025-pass2",
+        "image": "/data/tiles/F_COMET/comet1/2025-pass2_3.3.png"
+      },
+      {
+        "mjd": 60360.18,
+        "flux": 104.1061994242548,
+        "flux_err": 6.316799884776605,
+        "band": 3.3,
+        "pass": "2025-pass3",
+        "image": "/data/tiles/F_COMET/comet1/2025-pass3_3.3.png"
+      },
+      {
+        "mjd": 60000.26,
+        "flux": 609.7835336415466,
+        "flux_err": 6.338491191777053,
+        "band": 4.27,
+        "pass": "2025-pass1",
+        "image": "/data/tiles/F_COMET/comet1/2025-pass1_4.27.png"
+      },
+      {
+        "mjd": 60180.26,
+        "flux": 607.4313636753266,
+        "flux_err": 6.335396980613037,
+        "band": 4.27,
+        "pass": "2025-pass2",
+        "image": "/data/tiles/F_COMET/comet1/2025-pass2_4.27.png"
+      },
+      {
+        "mjd": 60360.26,
+        "flux": 616.8098490555251,
+        "flux_err": 6.316799884776605,
+        "band": 4.27,
+        "pass": "2025-pass3",
+        "image": "/data/tiles/F_COMET/comet1/2025-pass3_4.27.png"
+      }
+    ],
+    "spectrum": [
+      {
+        "wave": 1.25,
+        "flux": 112.17449933480906,
+        "flux_err": 3.1139711987541596
+      },
+      {
+        "wave": 2.2,
+        "flux": 110.78678825862663,
+        "flux_err": 2.944521729473025
+      },
+      {
+        "wave": 3.3,
+        "flux": 111.49391663971056,
+        "flux_err": 3.0160454077256285
+      },
+      {
+        "wave": 4.27,
+        "flux": 611.3415821241327,
+        "flux_err": 2.3002238206176653
+      }
+    ],
+    "provenance": {
+      "produced_by": "skyblink_pipeline",
+      "git_sha": "unknown",
+      "generated_at": "2026-10-06T15:50:31.428570+00:00",
+      "simulated": true
+    }
+  }
+]

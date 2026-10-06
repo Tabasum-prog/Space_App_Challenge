@@ -1,0 +1,158 @@
+[
+  {
+    "id": "F_VAR_2.2_0",
+    "field_id": "F_VAR",
+    "ra_deg": 109.86254370438853,
+    "dec_deg": 20.041333333333334,
+    "band_um": 2.2,
+    "epochs": [
+      "2025-pass1",
+      "2025-pass2"
+    ],
+    "snr": 7.39108013449258,
+    "p_local": 7.28204036367116e-14,
+    "p_trials_adjusted": 8.154266976119773e-11,
+    "kind": "pair",
+    "dipole_separation_arcsec": 417.56826155740737,
+    "sharpness": 0.7105448723037047,
+    "chi2_psf": 1.0,
+    "persistent_in_other_pass": false,
+    "type_label": "unidentified",
+    "status": "candidate",
+    "tiles": {
+      "epoch_a": "/data/tiles/F_VAR/F_VAR_2.2_0/epoch_a.png",
+      "epoch_b": "/data/tiles/F_VAR/F_VAR_2.2_0/epoch_b.png",
+      "diff": "/data/tiles/F_VAR/F_VAR_2.2_0/diff.png",
+      "snr": "/data/tiles/F_VAR/F_VAR_2.2_0/snr.png"
+    },
+    "notes": "",
+    "crossmatch": {
+      "catalog": null,
+      "id": null,
+      "sep_arcsec": null
+    },
+    "provenance": {
+      "produced_by": "skyblink_pipeline",
+      "git_sha": "b38be80b754ff5a7940535153a8f6bd42131317b",
+      "generated_at": "2026-10-06T15:22:00.754443+00:00",
+      "simulated": true
+    }
+  },
+  {
+    "id": "F_VAR_3.3_0",
+    "field_id": "F_VAR",
+    "ra_deg": 110.21259907054575,
+    "dec_deg": 19.817444444444444,
+    "band_um": 3.3,
+    "epochs": [
+      "2025-pass1",
+      "2025-pass2"
+    ],
+    "snr": 10.017846074762414,
+    "p_local": 6.362287711525242e-24,
+    "p_trials_adjusted": 8.37418447008089e-21,
+    "kind": "pair",
+    "dipole_separation_arcsec": 576.1992691923892,
+    "sharpness": 0.6442013720425889,
+    "chi2_psf": 1.0,
+    "persistent_in_other_pass": false,
+    "type_label": "unidentified",
+    "status": "candidate",
+    "tiles": {
+      "epoch_a": "/data/tiles/F_VAR/F_VAR_3.3_0/epoch_a.png",
+      "epoch_b": "/data/tiles/F_VAR/F_VAR_3.3_0/epoch_b.png",
+      "diff": "/data/tiles/F_VAR/F_VAR_3.3_0/diff.png",
+      "snr": "/data/tiles/F_VAR/F_VAR_3.3_0/snr.png"
+    },
+    "notes": "",
+    "crossmatch": {
+      "catalog": null,
+      "id": null,
+      "sep_arcsec": null
+    },
+    "provenance": {
+      "produced_by": "skyblink_pipeline",
+      "git_sha": "b38be80b754ff5a7940535153a8f6bd42131317b",
+      "generated_at": "2026-10-06T15:22:00.754443+00:00",
+      "simulated": true
+    }
+  },
+  {
+    "id": "F_VAR_3.3_1",
+    "field_id": "F_VAR",
+    "ra_deg": 110.08430652797503,
+    "dec_deg": 19.862222222222222,
+    "band_um": 3.3,
+    "epochs": [
+      "2025-pass1",
+      "2025-pass2"
+    ],
+    "snr": 8.705437083671669,
+    "p_local": 1.5817660970831306e-18,
+    "p_trials_adjusted": 2.0819556873385292e-15,
+    "kind": "pair",
+    "dipole_separation_arcsec": 335.33836585770024,
+    "sharpness": 0.7792622274440261,
+    "chi2_psf": 1.0,
+    "persistent_in_other_pass": false,
+    "type_label": "unidentified",
+    "status": "candidate",
+    "tiles": {
+      "epoch_a": "/data/tiles/F_VAR/F_VAR_3.3_1/epoch_a.png",
+      "epoch_b": "/data/tiles/F_VAR/F_VAR_3.3_1/epoch_b.png",
+      "diff": "/data/tiles/F_VAR/F_VAR_3.3_1/diff.png",
+      "snr": "/data/tiles/F_VAR/F_VAR_3.3_1/snr.png"
+    },
+    "notes": "",
+    "crossmatch": {
+      "catalog": null,
+      "id": null,
+      "sep_arcsec": null
+    },
+    "provenance": {
+      "produced_by": "skyblink_pipeline",
+      "git_sha": "b38be80b754ff5a7940535153a8f6bd42131317b",
+      "generated_at": "2026-10-06T15:22:00.754443+00:00",
+      "simulated": true
+    }
+  },
+  {
+    "id": "F_VAR_3.3_2",
+    "field_id": "F_VAR",
+    "ra_deg": 109.91386072141681,
+    "dec_deg": 19.98622222222222,
+    "band_um": 3.3,
+    "epochs": [
+      "2025-pass1",
+      "2025-pass2"
+    ],
+    "snr": 8.339379497885494,
+    "p_local": 3.734068811325114e-17,
+    "p_trials_adjusted": 4.9148643487730334e-14,
+    "kind": "pair",
+    "dipole_separation_arcsec": 700.5446389456708,
+    "sharpness": 0.011672875063370499,
+    "chi2_psf": 1.0,
+    "persistent_in_other_pass": false,
+    "type_label": "unidentified",
+    "status": "candidate",
+    "tiles": {
+      "epoch_a": "/data/tiles/F_VAR/F_VAR_3.3_2/epoch_a.png",
+      "epoch_b": "/data/tiles/F_VAR/F_VAR_3.3_2/epoch_b.png",
+      "diff": "/data/tiles/F_VAR/F_VAR_3.3_2/diff.png",
+      "snr": "/data/tiles/F_VAR/F_VAR_3.3_2/snr.png"
+    },
+    "notes": "",
+    "crossmatch": {
+      "catalog": null,
+      "id": null,
+      "sep_arcsec": null
+    },
+    "provenance": {
+      "produced_by": "skyblink_pipeline",
+      "git_sha": "b38be80b754ff5a7940535153a8f6bd42131317b",
+      "generated_at": "2026-10-06T15:22:00.754443+00:00",
+      "simulated": true
+    }
+  }
+]

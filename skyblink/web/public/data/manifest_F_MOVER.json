@@ -1,0 +1,38 @@
+{
+  "bands_um": [
+    1.25,
+    2.2,
+    3.3,
+    4.27
+  ],
+  "center": {
+    "dec_deg": 20,
+    "ra_deg": 10
+  },
+  "delta_lambda_um": 0.02,
+  "expected_objects": [],
+  "id": "F_MOVER",
+  "name": "Mover Field",
+  "notes": "",
+  "pair_status": "ok",
+  "passes_available": [
+    "2025-pass1",
+    "2025-pass2",
+    "2025-pass3"
+  ],
+  "size_deg": 0.2,
+  "story": "",
+  "candidates": [
+    "F_MOVER_3.3_0",
+    "F_MOVER_4.27_0"
+  ],
+  "data_release": "DR1",
+  "simulated": true,
+  "acknowledgement": true,
+  "provenance": {
+    "produced_by": "skyblink_pipeline",
+    "git_sha": "unknown",
+    "generated_at": "2026-10-06T15:50:31.428570+00:00",
+    "simulated": true
+  }
+}

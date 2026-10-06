@@ -1,0 +1,41 @@
+[
+  {
+    "id": "F_OTHER1_2.2_0",
+    "field_id": "F_OTHER1",
+    "ra_deg": 130.21582733850295,
+    "dec_deg": 39.84672222222222,
+    "band_um": 2.2,
+    "epochs": [
+      "2025-pass1",
+      "2025-pass2"
+    ],
+    "snr": 9.824597455126757,
+    "p_local": 4.411289889619949e-23,
+    "p_trials_adjusted": 4.304438645626933e-20,
+    "kind": "pair",
+    "dipole_separation_arcsec": 625.9203803658277,
+    "sharpness": 0.09171222861863952,
+    "chi2_psf": 1.0,
+    "persistent_in_other_pass": false,
+    "type_label": "unidentified",
+    "status": "candidate",
+    "tiles": {
+      "epoch_a": "/data/tiles/F_OTHER1/F_OTHER1_2.2_0/epoch_a.png",
+      "epoch_b": "/data/tiles/F_OTHER1/F_OTHER1_2.2_0/epoch_b.png",
+      "diff": "/data/tiles/F_OTHER1/F_OTHER1_2.2_0/diff.png",
+      "snr": "/data/tiles/F_OTHER1/F_OTHER1_2.2_0/snr.png"
+    },
+    "notes": "",
+    "crossmatch": {
+      "catalog": null,
+      "id": null,
+      "sep_arcsec": null
+    },
+    "provenance": {
+      "produced_by": "skyblink_pipeline",
+      "git_sha": "b38be80b754ff5a7940535153a8f6bd42131317b",
+      "generated_at": "2026-10-06T15:22:00.754443+00:00",
+      "simulated": true
+    }
+  }
+]
