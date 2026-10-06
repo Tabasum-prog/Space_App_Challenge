@@ -136,7 +136,10 @@ def generate_mock_data():
     with open(os.path.join(cat_dir, "synthetic_gaia.json"), "w") as out:
         json.dump([{"id": "star1", "ra": 10.0, "dec": 20.0, "pmra": 0.1}], out)
     with open(os.path.join(cat_dir, "synthetic_mpc.json"), "w") as out:
-        json.dump([{"id": "ast1", "ra": 10.0, "dec": 20.0}], out)
+        json.dump([
+            {"id": "ast1", "ra": 10.0, "dec": 20.0},
+            {"id": "comet1", "ra": 30.0, "dec": 40.0}
+        ], out)
         
     print("Synthetic data generated successfully.")
 
